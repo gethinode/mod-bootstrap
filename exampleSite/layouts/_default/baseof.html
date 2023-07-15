@@ -1,14 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0">
-  <title>{{ with .Title }}{{ printf "%s | " . }}{{ end }}{{ site.Title }}</title>
-  <link rel=stylesheet href="style.css">
-</head>
-<body>
-{{ block "main" . }}
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="theme-color" content="#712cf9">
+    <title>{{ with .Title }}{{ printf "%s | " . }}{{ end }}{{ site.Title }}</title>
+    {{ partial "head/stylesheet.html" -}}
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/color-modes.js"></script>
+  </head>
 
-{{ end }}
-</body>
+  <body class="bg-body-tertiary">
+    {{ block "main" . }}
+
+    {{ end }}
+    {{- partial "footer/scripts.html" (dict "page" .) }}
+    <script src="/js/cheatsheet.js"></script>
+  </body>
 </html>
