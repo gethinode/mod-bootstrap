@@ -38,7 +38,7 @@ Hinode is a clean blog theme for [Hugo][hugo], an open-source static site genera
 
 Hugo uses Go Modules under the hood. The top-level `/vendor` directory has a special meaning and is deleted from the release bundle after downloading. Unfortunately the algorithm is a bit too agressive and removes the `scss/modules/bootstrap/vendor` from the Bootstrap repository too.
 
-This modules uses a workaround to mount the folder from the project itself. The concerned file `rfs.scss` is copied from the npm release assets in a postinstallation script automatically. See https://github.com/gohugoio/hugo/issues/6945 for more details.
+This modules uses a workaround to mount the folder from the project itself. The concerned file `_rfs.scss` is copied from the npm release assets in a postinstallation script automatically. See https://github.com/gohugoio/hugo/issues/6945 for more details.
 
 <!-- MARKDOWN LINKS -->
 [hugo]: https://gohugo.io
