@@ -1,0 +1,11 @@
+{{- $source := "scss/modules/bootstrap/bootstrap.scss" -}}
+{{- $target := "css/main.css" -}}
+
+{{- $options := (dict "transpiler" "libsass" "targetPath" $target) -}}
+{{- $options = merge $options (dict "outputStyle" "expanded") -}}
+
+<!-- TODO: fix workaround replacing resources.Get with resources.GetMatch -->
+{{/*- $css := resources.Get $source | resources.ExecuteAsTemplate "style.app.scss" . | toCSS $options -*/}}
+{{- $css := resources.GetMatch $source | resources.ExecuteAsTemplate "style.app.scss" . | toCSS $options -}}
+
+<link rel="stylesheet" href="{{ $css.Permalink }}">
