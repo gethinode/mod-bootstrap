@@ -1,5 +1,12 @@
-{{- $source := "scss/modules/bootstrap/bootstrap.scss" -}}
+{{- $source := "scss/bootstrap.scss" -}}
 {{- $target := "css/main.css" -}}
+
+{{ $match := "scss/**.scss" }}
+{{ $files := sort (resources.Match $match) "Key" "asc" }}
+{{ warnf "Processing pattern: %s" $match}}
+{{- range $index, $file := $files -}}
+    {{- warnf " - Processing file: %s" $file.Key }}
+{{- end -}}
 
 {{- $options := (dict "transpiler" "libsass" "targetPath" $target) -}}
 {{- $options = merge $options (dict "outputStyle" "expanded") -}}

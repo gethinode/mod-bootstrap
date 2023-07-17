@@ -20,7 +20,8 @@
     "mod:tidy": "hugo mod tidy && hugo mod tidy -s exampleSite",
     "mod:update": "hugo mod get -u ./... && npm run -s mod:vendor && npm run -s mod:tidy",
     "mod:vendor": "hugo mod vendor",
-    "postinstall": "cpy node_modules/bootstrap/scss/vendor/_rfs.scss assets/scss/modules/bootstrap/vendor --flat",
+    "postinstall": "npm run -s copy:vendor",
+    "copy:vendor": "cpy node_modules/bootstrap/scss/vendor/_rfs.scss assets/scss/modules/bootstrap/_vendor --flat",
     "test": "npm run -s build"
   },
   "repository": {
