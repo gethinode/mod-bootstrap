@@ -15,9 +15,10 @@ unsafe = true
     target = "static"
   [[module.imports]]
     path = "github.com/gethinode/mod-bootstrap"
-  # [[module.imports.mounts]]
-  #   source = "assets/js/modules/bootstrap"
-  #   target = "static/js"
   [[module.imports.mounts]]
     source = "assets/scss/modules/bootstrap/_vendor"
     target = "assets/scss/modules/bootstrap/vendor"
+  [[module.imports.mounts]]
+    source = "assets"
+    target = "assets"
+    excludeFiles = "scss/modules/bootstrap/_vendor/_rfs.scss"
