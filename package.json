@@ -1,6 +1,6 @@
 {
   "name": "@gethinode/mod-bootstrap",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A Hugo module to add the Bootstrap toolkit to your Hinode site (work in progress)",
   "keywords": [
     "hugo",
