@@ -40,7 +40,7 @@
     "@semantic-release/git": "^10.0.1",
     "bootstrap": "^5.3.1",
     "cpy-cli": "^5.0.0",
-    "hugo-bin": "^0.113.0",
+    "hugo-bin": "^0.114.2",
     "rimraf": "^5.0.1",
     "semantic-release": "^21.0.7"
   },
