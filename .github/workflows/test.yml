@@ -25,5 +25,17 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+
+    - name: Install Dart Sass
+      run:  |
+        if [ "$RUNNER_OS" == "Linux" ]; then
+          sudo snap install dart-sass
+        elif [ "$RUNNER_OS" == "macOS" ]; then
+          brew install sass/sass/sass
+        elif [ "$RUNNER_OS" == "Windows" ]; then
+          choco install sass
+        fi
+      shell: bash
+
     - run: npm ci
     - run: npm run test
