@@ -36,9 +36,15 @@ Hinode is a clean blog theme for [Hugo][hugo], an open-source static site genera
 
 ## Notes
 
+### Vendor files
+
 Hugo uses Go Modules under the hood. The top-level `/vendor` directory has a special meaning and is deleted from the release bundle after downloading. Unfortunately the algorithm is a bit too agressive and removes the `scss/modules/bootstrap/vendor` from the Bootstrap repository too.
 
-This modules uses a workaround to mount the folder from the project itself. The concerned file `_rfs.scss` is copied from the npm release assets in a postinstallation script automatically. See https://github.com/gohugoio/hugo/issues/6945 for more details.
+This modules uses a workaround to mount the folder from the project itself. The concerned file `_rfs.scss` is copied from the npm release assets by running the npm script `update:vendor:step1`. See https://github.com/gohugoio/hugo/issues/6945 for more details.
+
+### Dart support
+
+When transpiling with Dart Sass, use the file `assets/scss/bootstrap-dart.scss` an entrypoint instead of `assets/scss/bootstrap.scss`. The former file includes modifications to address several deprecation warnings. Run the npm command `update:scss` to recreate the modified files, which are derived from the Bootstrap source files. The script is **not compatible with Windows**, due to the different handling of double quotes on this Operating System.
 
 <!-- MARKDOWN LINKS -->
 [hugo]: https://gohugo.io
