@@ -1,4 +1,12 @@
+{{- $transpiler := site.Params.main.build.transpiler | default "libsass" -}}
+{{- $supportedTranspilers := slice "libsass" "dartsass" -}}
+{{- if not (in $supportedTranspilers $transpiler) -}}
+    {{- errorf "partial [head/stylesheet.html] - Invalid value for param 'transpiler': %s" $transpiler -}}
+{{- end -}}
+{{ warnf "Transpiler: %s" $transpiler }}
+
 {{- $source := "scss/bootstrap.scss" -}}
+{{- if eq $transpiler "dartsass" }}{{ $source = "scss/bootstrap-dart.scss" }}{{ end -}}
 {{- $target := "css/main.css" -}}
 
 {{ $match := "scss/**.scss" }}
@@ -8,7 +16,7 @@
     {{- warnf " - Processing file: %s" $file.Key }}
 {{- end -}}
 
-{{- $options := (dict "transpiler" "libsass" "targetPath" $target) -}}
+{{- $options := (dict "transpiler" $transpiler "targetPath" $target) -}}
 {{- $options = merge $options (dict "outputStyle" "expanded") -}}
 
 <!-- TODO: fix workaround replacing resources.Get with resources.GetMatch -->

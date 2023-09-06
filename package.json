@@ -12,17 +12,27 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "prestart": "npm run clean && npm run mod:vendor",
+    "prestart": "npm run -s mod:vendor",
     "start": "hugo server -s exampleSite --bind=0.0.0.0 --disableFastRender --printI18nWarnings",
+    "start:dart": "hugo server -s exampleSite -e dart --bind=0.0.0.0 --disableFastRender --printI18nWarnings",
     "prebuild": "npm run clean && npm run mod:vendor",
-    "build": "hugo --gc --minify -s exampleSite",
-    "clean": "rimraf exampleSite/public exampleSite/resources",
+    "build:libsass": "npm run -s prebuild && hugo --gc --minify -s exampleSite",
+    "build:dartsass": "npm run -s prebuild && hugo --gc --minify -s exampleSite -e dart",
+    "clean": "rimraf exampleSite/public",
+    "mod:clean": "hugo mod clean",
+    "mod:update": "rimraf _vendor && hugo mod get -u ./... && hugo mod get -u && npm run -s mod:vendor && npm run -s mod:tidy",
     "mod:tidy": "hugo mod tidy && hugo mod tidy -s exampleSite",
-    "mod:update": "hugo mod get -u ./... && npm run -s mod:vendor && npm run -s mod:tidy",
-    "mod:vendor": "hugo mod vendor",
-    "postinstall": "npm run -s copy:vendor",
-    "copy:vendor": "cpy node_modules/bootstrap/scss/vendor/_rfs.scss assets/scss/modules/bootstrap/_vendor --flat",
-    "test": "npm run -s build",
+    "mod:vendor": "rimraf _vendor && hugo mod vendor",
+    "update:scss": "npm-run-all update:**",
+    "update:vendor:step1": "cpy node_modules/bootstrap/scss/vendor/_rfs.scss assets/scss/modules/bootstrap/_vendor --flat",
+    "update:vendor:step2": "shx echo '@use \"sass:math\";' > assets/scss/modules/bootstrap/_vendor/_rfs-dart.scss",
+    "update:vendor:step3": "shx cat assets/scss/modules/bootstrap/_vendor/_rfs.scss >> assets/scss/modules/bootstrap/_vendor/_rfs-dart.scss",
+    "update:vendor:step4": "replace-in-files --string=\"abs(\" --replacement=\"math.abs(\" ./assets/scss/modules/bootstrap/_vendor/_rfs-dart.scss",
+    "update:mixins:step1": "cpy node_modules/bootstrap/scss/_mixins.scss assets/scss/modules/bootstrap --flat --rename=_mixins-dart.scss",
+    "update:mixins:step2": "replace-in-files --string=\"vendor/rfs\" --replacement=\"vendor/rfs-dart\" ./assets/scss/modules/bootstrap/_mixins-dart.scss",
+    "update:bootstrap:step1": "cpy assets/scss/bootstrap.scss assets/scss --flat --rename=bootstrap-dart.scss",
+    "update:bootstrap:step2": "replace-in-files --string='mixins\"' --replacement='mixins-dart\"' ./assets/scss/bootstrap-dart.scss",
+    "test": "npm-run-all build:**",
     "upgrade": "npx npm-check-updates -u && npm run -s mod:update"
   },
   "repository": {
@@ -41,8 +51,11 @@
     "bootstrap": "^5.3.1",
     "cpy-cli": "^5.0.0",
     "hugo-bin": "^0.114.2",
+    "npm-run-all": "^4.1.5",
+    "replace-in-files-cli": "^2.2.0",
     "rimraf": "^5.0.1",
-    "semantic-release": "^21.0.7"
+    "semantic-release": "^21.0.7",
+    "shx": "^0.3.4"
   },
   "hugo-bin": {
     "buildTags": "extended"
