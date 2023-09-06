@@ -44,7 +44,7 @@ This modules uses a workaround to mount the folder from the project itself. The 
 
 ### Dart support
 
-When transpiling with Dart Sass, use the file `assets/scss/bootstrap-dart.scss` an entrypoint instead of `assets/scss/bootstrap.scss`. The former file includes modifications to address several deprecation warnings. Run the npm command `update:scss` to recreate the modified files, which are derived from the Bootstrap source files. The script is **not compatible with Windows**, due to the different handling of double quotes on this Operating System.
+When transpiling with Dart Sass, use the file `assets/scss/bootstrap-dart.scss` an entrypoint instead of `assets/scss/bootstrap.scss`. The former file includes modifications to address several deprecation warnings. Run the npm command `update-scss` to recreate the modified files, which are derived from the Bootstrap source files. The script is **not compatible with Windows**, due to the different handling of double quotes on this Operating System.
 
 <!-- MARKDOWN LINKS -->
 [hugo]: https://gohugo.io

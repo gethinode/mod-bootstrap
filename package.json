@@ -23,7 +23,7 @@
     "mod:update": "rimraf _vendor && hugo mod get -u ./... && hugo mod get -u && npm run -s mod:vendor && npm run -s mod:tidy",
     "mod:tidy": "hugo mod tidy && hugo mod tidy -s exampleSite",
     "mod:vendor": "rimraf _vendor && hugo mod vendor",
-    "update:scss": "npm-run-all update:**",
+    "update-scss": "npm-run-all update:**",
     "update:vendor:step1": "cpy node_modules/bootstrap/scss/vendor/_rfs.scss assets/scss/modules/bootstrap/_vendor --flat",
     "update:vendor:step2": "shx echo '@use \"sass:math\";' > assets/scss/modules/bootstrap/_vendor/_rfs-dart.scss",
     "update:vendor:step3": "shx cat assets/scss/modules/bootstrap/_vendor/_rfs.scss >> assets/scss/modules/bootstrap/_vendor/_rfs-dart.scss",
@@ -31,7 +31,8 @@
     "update:mixins:step1": "cpy node_modules/bootstrap/scss/_mixins.scss assets/scss/modules/bootstrap --flat --rename=_mixins-dart.scss",
     "update:mixins:step2": "replace-in-files --string=\"vendor/rfs\" --replacement=\"vendor/rfs-dart\" ./assets/scss/modules/bootstrap/_mixins-dart.scss",
     "update:bootstrap:step1": "cpy assets/scss/bootstrap.scss assets/scss --flat --rename=bootstrap-dart.scss",
-    "update:bootstrap:step2": "replace-in-files --string='mixins\"' --replacement='mixins-dart\"' ./assets/scss/bootstrap-dart.scss",
+    "update:bootstrap:step2": "replace-in-files --string='libsass' --replacement='dartsass' ./assets/scss/bootstrap-dart.scss",
+    "update:bootstrap:step3": "replace-in-files --string='mixins\"' --replacement='mixins-dart\"' ./assets/scss/bootstrap-dart.scss",
     "test": "npm-run-all build:**",
     "upgrade": "npx npm-check-updates -u && npm run -s mod:update"
   },
