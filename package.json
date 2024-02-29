@@ -19,6 +19,7 @@
     "build:libsass": "npm run -s prebuild && hugo --gc --minify -s exampleSite",
     "build:dartsass": "npm run -s prebuild && hugo --gc --minify -s exampleSite -e dart",
     "clean": "rimraf exampleSite/public",
+    "env": "hugo env",
     "mod:clean": "hugo mod clean",
     "mod:update": "rimraf _vendor && hugo mod get -u ./... && hugo mod get -u && npm run -s mod:vendor && npm run -s mod:tidy",
     "mod:tidy": "hugo mod tidy && hugo mod tidy -s exampleSite",
