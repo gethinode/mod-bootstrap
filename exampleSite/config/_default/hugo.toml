@@ -6,7 +6,7 @@ title = 'Test site for mod-bootstrap'
 unsafe = true
 
 [module]
-  replacements = 'github.com/gethinode/mod-bootstrap -> ../..'
+  workspace = "mod-bootstrap.work"
   [[module.mounts]]
     source = "assets"
     target = "assets"
