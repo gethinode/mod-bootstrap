@@ -38,7 +38,7 @@ Hinode is a clean blog theme for [Hugo][hugo], an open-source static site genera
 
 ### Vendor files
 
-Hugo uses Go Modules under the hood. The top-level `/vendor` directory has a special meaning and is deleted from the release bundle after downloading. Unfortunately the algorithm is a bit too agressive and removes the `scss/modules/bootstrap/vendor` from the Bootstrap repository too.
+Hugo uses Go Modules under the hood. The top-level `/vendor` directory has a special meaning and is deleted from the release bundle after downloading. Unfortunately the algorithm is a bit too aggressive and removes the `scss/modules/bootstrap/vendor` from the Bootstrap repository too.
 
 This modules uses a workaround to mount the folder from the project itself. The concerned file `_rfs.scss` is copied from the npm release assets by running the npm script `update:vendor:step1`. See https://github.com/gohugoio/hugo/issues/6945 for more details.
 
