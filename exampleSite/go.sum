@@ -1,4 +1,8 @@
+github.com/gethinode/mod-bootstrap v1.2.4 h1:4CFNpwpRKiZlMVWg9u5+ijSb924j4yM3G1p96Hquas0=
+github.com/gethinode/mod-bootstrap v1.2.4/go.mod h1:CL9IDot6nbXIWJYE/KxfsTdYYEJIGL17BXbAYPn+wVQ=
 github.com/twbs/bootstrap v5.3.0+incompatible h1:4+staADO0OrqUv77m+XL+vHYojLH9oxb4Vxi9mnIJWg=
 github.com/twbs/bootstrap v5.3.0+incompatible/go.mod h1:fZTSrkpSf0/HkL0IIJzvVspTt1r9zuf7XlZau8kpcY0=
 github.com/twbs/bootstrap v5.3.2+incompatible h1:tuiO5acc6xnZUR77Sbi5aKWXxjYxbmsSbJwYrhAKoQQ=
 github.com/twbs/bootstrap v5.3.2+incompatible/go.mod h1:fZTSrkpSf0/HkL0IIJzvVspTt1r9zuf7XlZau8kpcY0=
+github.com/twbs/bootstrap v5.3.3+incompatible h1:goFoqinzdHfkeegpFP7pvhbd0g+A3O2hbU3XCjuNrEQ=
+github.com/twbs/bootstrap v5.3.3+incompatible/go.mod h1:fZTSrkpSf0/HkL0IIJzvVspTt1r9zuf7XlZau8kpcY0=
