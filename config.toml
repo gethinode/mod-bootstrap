@@ -22,3 +22,7 @@
   [[module.imports.mounts]]
     source = "scss"
     target = "assets/scss/modules/bootstrap"
+
+[params.modules.bootstrap]
+  integration = "core"
+  excludeSCSS = true
