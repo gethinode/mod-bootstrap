@@ -48,7 +48,7 @@
   },
   "homepage": "https://gethinode.com",
   "devDependencies": {
-    "@semantic-release/exec": "^7.0.3",
+    "@semantic-release/exec": "^7.1.0",
     "@semantic-release/git": "^10.0.1",
     "bootstrap": "^5.3.6",
     "cpy-cli": "^5.0.0",
