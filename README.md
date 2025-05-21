@@ -46,9 +46,16 @@ This modules uses a workaround to mount the folder from the project itself. The 
 
 When transpiling with Dart Sass, use the file `assets/scss/bootstrap-dart.scss` as entrypoint instead of `assets/scss/bootstrap.scss`. The former file includes modifications to address several deprecation warnings. Run the npm command `update-scss` to recreate the modified files, which are derived from the Bootstrap source files. The script is **not compatible with Windows**, due to the different handling of double quotes on this Operating System.
 
+## Contributing
+
+This module uses [semantic-release][semantic-release] to automate the release of new versions. The package uses `husky` and `commitlint` to ensure commit messages adhere to the [Conventional Commits][conventionalcommits] specification. You can run `npx git-cz` from the terminal to help prepare the commit message.
+
 <!-- MARKDOWN LINKS -->
 [hugo]: https://gohugo.io
 [hinode_docs]: https://gethinode.com
 [bootstrap]: https://getbootstrap.com
 [repository]: https://github.com/gethinode/hinode.git
 [repository_template]: https://github.com/gethinode/template.git
+[conventionalcommits]: https://www.conventionalcommits.org
+[husky]: https://typicode.github.io/husky/
+[semantic-release]: https://semantic-release.gitbook.io/
