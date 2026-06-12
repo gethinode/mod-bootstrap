@@ -54,7 +54,7 @@
     "@semantic-release/exec": "^7.1.0",
     "@semantic-release/git": "^10.0.1",
     "bootstrap": "^5.3.8",
-    "commitizen": "^4.3.1",
+    "commitizen": "^4.3.2",
     "cpy-cli": "^7.0.0",
     "hugo-bin": "^0.149.2",
     "husky": "^9.1.7",
