@@ -1,0 +1,8 @@
+# default configuration for bootstrap
+
+[modules]
+    [modules.bootstrap]
+        # bootstrap's UMD build does not self-register window.bootstrap when bundled
+        # by esbuild; expose it explicitly so Hinode's scripts pipeline registers it.
+        [modules.bootstrap.globals]
+            "js/modules/bootstrap/bootstrap.bundle.js" = "bootstrap"
