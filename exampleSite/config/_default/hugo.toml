@@ -21,4 +21,4 @@ unsafe = true
   [[module.imports.mounts]]
     source = "assets"
     target = "assets"
-    excludeFiles = "scss/modules/bootstrap/_vendor/_rfs.scss"
+    files = ["! scss/modules/bootstrap/_vendor/_rfs.scss", "**"]

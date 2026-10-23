@@ -16,9 +16,8 @@
   [[module.imports]]
     path = "github.com/twbs/bootstrap"
   [[module.imports.mounts]]
-    source = "dist/js"
-    target = "assets/js/modules/bootstrap"
-    includeFiles = "*.bundle.js"
+    source = "dist/js/bootstrap.bundle.js"
+    target = "assets/js/modules/bootstrap/bootstrap.bundle.js"
   [[module.imports.mounts]]
     source = "scss"
     target = "assets/scss/modules/bootstrap"
