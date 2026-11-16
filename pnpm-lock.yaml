@@ -21,8 +21,8 @@ importers:
         specifier: ^11.0.1
         version: 11.0.1(semantic-release@25.0.9(typescript@5.8.3))
       bootstrap:
-        specifier: ^5.3.8
-        version: 5.3.8(@popperjs/core@2.11.8)
+        specifier: ^5.3.9
+        version: 5.3.9(@popperjs/core@2.11.8)
       cpy-cli:
         specifier: ^7.0.0
         version: 7.0.0
@@ -409,8 +409,8 @@ packages:
   before-after-hook@4.0.0:
     resolution: {integrity: sha512-q6tR3RPqIB1pMiTRMFcZwuG5T8vwp+vUvEG0vuI6B+Rikh5BfPp2fQ82c925FOs+b0lcFQ8CFrL+KbilfZFhOQ==}
 
-  bootstrap@5.3.8:
-    resolution: {integrity: sha512-HP1SZDqaLDPwsNiqRqi5NcP0SSXciX2s9E+RyqJIIqGo+vJeN5AJVM98CXmW/Wux0nQ5L7jeWUdplCEf0Ee+tg==}
+  bootstrap@5.3.9:
+    resolution: {integrity: sha512-20cU0rcfw8WdxtVbmfU+xT2EjvVTw9Ror/h1Qvd7DXCujRg8OO9mdBCsmTHdJFf3BuadmBNJtgIuUXsBqSkk/w==}
     peerDependencies:
       '@popperjs/core': ^2.11.8
 
@@ -2430,7 +2430,7 @@ snapshots:
 
   before-after-hook@4.0.0: {}
 
-  bootstrap@5.3.8(@popperjs/core@2.11.8):
+  bootstrap@5.3.9(@popperjs/core@2.11.8):
     dependencies:
       '@popperjs/core': 2.11.8
 
