@@ -1,4 +1,4 @@
-{{- $transpiler := site.Params.main.build.transpiler | default "libsass" -}}
+{{- $transpiler := site.Params.main.build.transpiler | default "dartsass" -}}
 {{- $supportedTranspilers := slice "libsass" "dartsass" -}}
 {{- if not (in $supportedTranspilers $transpiler) -}}
     {{- errorf "partial [head/stylesheet.html] - Invalid value for param 'transpiler': %s" $transpiler -}}

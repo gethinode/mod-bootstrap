@@ -17,7 +17,7 @@
     "start": "hugo server -s exampleSite --bind=0.0.0.0 --disableFastRender --printI18nWarnings",
     "start:dart": "hugo server -s exampleSite -e dart --bind=0.0.0.0 --disableFastRender --printI18nWarnings",
     "prebuild": "pnpm clean && pnpm mod:vendor",
-    "build:libsass": "pnpm prebuild && hugo --gc --minify -s exampleSite",
+    "build:libsass": "pnpm prebuild && hugo --gc --minify -s exampleSite -e libsass",
     "build:dartsass": "pnpm prebuild && hugo --gc --minify -s exampleSite -e dart",
     "clean": "rimraf exampleSite/public",
     "env": "hugo env",
@@ -36,7 +36,7 @@
     "update:bootstrap:step1": "cpy assets/scss/bootstrap.scss assets/scss --flat --rename=bootstrap-dart.scss",
     "update:bootstrap:step2": "replace-in-files --string='libsass' --replacement='dartsass' ./assets/scss/bootstrap-dart.scss",
     "update:bootstrap:step3": "replace-in-files --string='mixins\"' --replacement='mixins-dart\"' ./assets/scss/bootstrap-dart.scss",
-    "test": "pnpm build:libsass && pnpm build:dartsass",
+    "test": "pnpm build:dartsass",
     "upgrade": "pnpm dlx npm-check-updates -u && pnpm mod:update"
   },
   "repository": {
@@ -56,7 +56,7 @@
     "@semantic-release/git": "^11.0.1",
     "bootstrap": "^5.3.9",
     "cpy-cli": "^7.0.0",
-    "hugo-extended": "^0.169.0",
+    "hugo-extended": "0.170.0",
     "husky": "^9.1.7",
     "npm-run-all": "^4.1.5",
     "replace-in-files-cli": "^4.0.0",

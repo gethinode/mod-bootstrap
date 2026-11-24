@@ -1,2 +1,2 @@
 [main.build]
-    transpiler = "libsass"
+    transpiler = "dartsass"

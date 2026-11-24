@@ -44,6 +44,8 @@ This modules uses a workaround to mount the folder from the project itself. The 
 
 ### Dart support
 
+The example site uses Dart Sass. To build with LibSass, set `HUGO_BIN_PATH` to the absolute path of a Hugo Extended binary older than 0.170.0 and run `pnpm build:libsass`.
+
 When transpiling with Dart Sass, use the file `assets/scss/bootstrap-dart.scss` as entrypoint instead of `assets/scss/bootstrap.scss`. The former file includes modifications to address several deprecation warnings. Run the npm command `update-scss` to recreate the modified files, which are derived from the Bootstrap source files. The script is **not compatible with Windows**, due to the different handling of double quotes on this Operating System.
 
 ## Contributing
